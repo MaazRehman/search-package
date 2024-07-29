@@ -1,20 +1,27 @@
-import { renderHook, waitFor} from "@testing-library/react";
-
+import { renderHook, waitFor } from "@testing-library/react";
 import { usePackageInfo } from '../contexts/PackageContext';
 import useGetPackageInfoSearchResult from './useGetPackageInfoSearchResult';
+import { useLoadingContext } from "../contexts/LoadingContext";
 
 jest.mock('../contexts/PackageContext', () => ({
     usePackageInfo: jest.fn()
 }));
 
+jest.mock('../contexts/LoadingContext', () => ({
+    useLoadingContext: jest.fn()
+}));
+
 describe('useGetPackageInfoSearchResult', () => {
     const setPackagesMock = jest.fn();
+    const setLoadingMock = jest.fn();
 
     beforeEach(() => {
         jest.clearAllMocks();
         (usePackageInfo as jest.Mock).mockReturnValue({
             setPackages: setPackagesMock,
+            packages: []
         });
+        (useLoadingContext as jest.Mock).mockReturnValue({ setLoading: setLoadingMock });
 
         global.fetch = jest.fn();
     });
@@ -23,7 +30,7 @@ describe('useGetPackageInfoSearchResult', () => {
         jest.resetAllMocks();
     });
 
-    it('should fetch and sets package info based on search input', async () => {
+    it('should fetch and set package info based on search input', async () => {
         const mockQuery = 'react';
         const mockResponse = [
             {
@@ -54,8 +61,7 @@ describe('useGetPackageInfoSearchResult', () => {
                     stars: 123456
                 }
             ]);
-
-        })
+        });
     });
 
     it('does not fetch data when search input is empty', () => {

@@ -1,6 +1,6 @@
 import React, { useState, useContext, createContext, ReactNode } from 'react';
 
-interface Package {
+type Package = {
     name: string;
     stars: number;
     owner: string;
