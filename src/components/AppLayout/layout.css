@@ -1,0 +1,13 @@
+.page-title {
+    padding: 0px 0 5px 0;
+    display: inline-block;
+}
+
+
+.logo {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    left: auto;
+    top: 5px;
+}
