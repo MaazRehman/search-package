@@ -14,12 +14,6 @@ const AppLayout: React.FC = () => {
         style={{ backgroundColor: "#2188b6" }}
         breakpoint="lg"
         collapsedWidth="0"
-        onBreakpoint={(broken) => {
-          console.log(broken);
-        }}
-        onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
-        }}
       >
         <div className="demo-logo-vertical" />
         <Menu theme="dark" mode="inline" defaultSelectedKeys={[]} items={[]} />
