@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import AppLayout from "./components/AppLayout/AppLayout";
-import {PackageInfoProvider} from "./contexts/PackageContext";
-import {LoadingContextProvider} from "./contexts/LoadingContext";
+import { PackageInfoProvider } from "./contexts/PackageContext";
+import { LoadingContextProvider } from "./contexts/LoadingContext";
 
 function App() {
   return (
-      <PackageInfoProvider>
-          <LoadingContextProvider>
-            <AppLayout />
-          </LoadingContextProvider>
-      </PackageInfoProvider>
+    <PackageInfoProvider>
+      <LoadingContextProvider>
+        <AppLayout />
+      </LoadingContextProvider>
+    </PackageInfoProvider>
   );
 }
 

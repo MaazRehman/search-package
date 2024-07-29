@@ -4,12 +4,13 @@
 // learn more: https://github.com/testing-library/jest-dom
 
 // src/setupTests.ts
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 
-global.matchMedia = global.matchMedia || function () {
+global.matchMedia =
+  global.matchMedia ||
+  function () {
     return {
-        addListener: jest.fn(),
-        removeListener: jest.fn(),
+      addListener: jest.fn(),
+      removeListener: jest.fn(),
     };
-};
-
+  };
