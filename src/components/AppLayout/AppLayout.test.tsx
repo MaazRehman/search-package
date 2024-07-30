@@ -3,13 +3,12 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import AppLayout from "./AppLayout";
 
-// Mock the Packages component
 jest.mock("../package/Packages", () => () => (
   <div>Mocked Packages Component</div>
 ));
 
-describe("AppLayout", () => {
-  test("renders AppLayout component correctly", () => {
+describe("<AppLayout/>", () => {
+  it("should render AppLayout component correctly", () => {
     render(<AppLayout />);
 
     const sider = screen.getByTestId("sider");

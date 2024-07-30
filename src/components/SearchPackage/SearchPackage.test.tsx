@@ -9,13 +9,12 @@ jest.mock("lodash", () => ({
   debounce: jest.fn((func) => func), // Provide a no-op debounce function
 }));
 
-describe("Package Component", () => {
+describe("<SearchPackage />", () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
   it("should call the debounced search function when input changes", async () => {
-    // Render the component
     render(<SearchPackage />);
 
     const input = screen.getByPlaceholderText("input search text");

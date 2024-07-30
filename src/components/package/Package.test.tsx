@@ -20,8 +20,8 @@ jest.mock("../../contexts/LoadingContext", () => ({
   useLoadingContext: jest.fn(),
 }));
 
-describe("Packages", () => {
-  test("renders loader when loading is true", () => {
+describe("<Packages/>", () => {
+  it("should render loader when loading is true", () => {
     (useLoadingContext as jest.Mock).mockReturnValue({ loading: true });
     (usePackageInfo as jest.Mock).mockReturnValue({ packages: [] });
 
@@ -32,7 +32,7 @@ describe("Packages", () => {
     expect(loader).toHaveTextContent("Loading content, please wait");
   });
 
-  test("renders table when loading is false", () => {
+  it("should render table when loading is false", () => {
     (useLoadingContext as jest.Mock).mockReturnValue({ loading: false });
     (usePackageInfo as jest.Mock).mockReturnValue({
       packages: [
