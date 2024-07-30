@@ -55,3 +55,12 @@ Formats the code using prettier
 
 Switched to recommended version specified repo admin 
 
+
+## Next steps
+- [ ] The page is rendered on the client side , ideally we can move this to server side for better load time and better SEO access.
+- [ ] Add lint-staged so that prettier changes can be staged on pre-commit hook
+- [ ] Add an e2e test to capture the journey using cypress so that we can also test e2e journey
+- [ ] The bundle size is relatively small but if it tends to grow then we can add code splitting
+- [ ] Add a PR template to project so that each pull request has a template.
+- [ ] Make main branch as protected
+- [ ] Setup CI CD for the project
