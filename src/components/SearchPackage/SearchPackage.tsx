@@ -5,7 +5,7 @@ import {
   DEBOUNCE_DELAY,
   PLACEHOLDER_SEARCH_TEXT,
 } from "../AppLayout/constants";
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line
 const lodash = require("lodash");
 
 const SearchPackage = () => {

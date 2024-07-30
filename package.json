@@ -49,10 +49,6 @@
     "switchToRecommendedVersion": "nvm use"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [

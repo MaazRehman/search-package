@@ -6,7 +6,7 @@ type Package = {
   owner: string;
 };
 
-interface PackageDataContext {
+type PackageDataContext = {
   packages: Package[];
   setPackages: React.Dispatch<React.SetStateAction<Package[]>>;
 }
@@ -15,7 +15,7 @@ const PackageInfoContext = createContext<PackageDataContext | undefined>(
   undefined,
 );
 
-interface PackageInfoProviderProps {
+type PackageInfoProviderProps = {
   children: ReactNode;
 }
 

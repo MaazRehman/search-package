@@ -26,7 +26,7 @@ describe("AppLayout", () => {
     const footer = screen.getByTestId("footer");
     expect(footer).toBeInTheDocument();
     expect(footer).toHaveTextContent(
-      `Ant Design ©${new Date().getFullYear()} Created by Ant UED`,
+      `Bower Search 2.0 ©${new Date().getFullYear()}`,
     );
   });
 });

@@ -1,8 +1,9 @@
 import React from "react";
-import { Layout, Menu } from "antd";
+import {Layout, Menu,} from "antd";
 import Packages from "../package/Packages";
 import "./layout.css";
-import { colorBgContainer } from "./constants";
+import {FOOTER_STYLES, HEADER_STYLES, SIDEBAR_STYLES, MENU_ITEMS} from "./constants";
+
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -11,21 +12,19 @@ const AppLayout: React.FC = () => {
     <Layout style={{ height: "100vh" }}>
       <Sider
         data-testid="sider"
-        style={{ backgroundColor: "#2188b6" }}
+        style={SIDEBAR_STYLES as React.CSSProperties}
         breakpoint="lg"
         collapsedWidth="0"
       >
         <div className="demo-logo-vertical" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={[]} items={[]} />
+        <Menu
+            style={SIDEBAR_STYLES as React.CSSProperties}
+            theme="light" mode="inline" defaultSelectedKeys={['0']} items={MENU_ITEMS}/>
       </Sider>
       <Layout>
         <Header
           data-testid="header"
-          style={{
-            padding: 0,
-            background: colorBgContainer,
-            textAlign: "center",
-          }}
+          style={HEADER_STYLES as  React.CSSProperties}
         >
           <span>
             <img
@@ -41,14 +40,9 @@ const AppLayout: React.FC = () => {
         </Content>
         <Footer
           data-testid="footer"
-          style={{
-            textAlign: "center",
-            height: "100px",
-            lineHeight: "100px",
-            marginBottom: "0",
-          }}
+          style={FOOTER_STYLES as React.CSSProperties}
         >
-          Ant Design ©{new Date().getFullYear()} Created by Ant UED
+          Bower Search 2.0 ©{new Date().getFullYear()}
         </Footer>
       </Layout>
     </Layout>

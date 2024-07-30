@@ -7,7 +7,7 @@ import React, {
   SetStateAction,
 } from "react";
 
-interface PresentationLogicContextType {
+type PresentationLogicContextType = {
   loading: boolean;
   setLoading: Dispatch<SetStateAction<boolean>>;
 }
@@ -16,7 +16,7 @@ const LoadingContext = createContext<PresentationLogicContextType | undefined>(
   undefined,
 );
 
-interface LoadingContextProviderProps {
+type LoadingContextProviderProps = {
   children: ReactNode;
 }
 
